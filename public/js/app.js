@@ -8,16 +8,16 @@ $(document).ready(function() {
     breakBtn.on('click', takeABreak);
 
     function startCountdown() {
-        setInterval(function() {
+
+        var countdown = setInterval(function() {
             var secondsVal = +seconds.text(); //the plus uses type coercion to make seconds.text a number if it can
             var minutesVal = +minutes.text();
 
-            if (minutesVal && secondsVal === 0) {
-
-            }
             if (secondsVal === 0 && minutesVal === 0) {
                 breakBtn.removeClass('disabled');
                 breakBtn.removeAttr('disabled');
+                clearInterval(startCountdown);
+                return;
             }
 
             if (secondsVal === 0) {
@@ -36,6 +36,8 @@ $(document).ready(function() {
     }
 
     function takeABreak() {
-        alert('Take a break!');
+        minutes.text('05');
+        seconds.text('00');
+        startCountdown();
     }
 });
