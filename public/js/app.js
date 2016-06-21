@@ -30,4 +30,8 @@ $(document).ready(function() {
 
         }, 1000);
     }
+
+    function breakAlert() {
+        alert('Take a break!');
+    }
 });
