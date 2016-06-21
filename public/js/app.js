@@ -5,12 +5,16 @@ $(document).ready(function() {
     var breakBtn = $('#break')
 
     start.on('click', startCountdown);
+    breakBtn.on('click', takeABreak);
 
     function startCountdown() {
         setInterval(function() {
             var secondsVal = +seconds.text(); //the plus uses type coercion to make seconds.text a number if it can
             var minutesVal = +minutes.text();
 
+            if (minutesVal && secondsVal === 0) {
+
+            }
             if (secondsVal === 0 && minutesVal === 0) {
                 breakBtn.removeClass('disabled');
                 breakBtn.removeAttr('disabled');
@@ -31,7 +35,7 @@ $(document).ready(function() {
         }, 1000);
     }
 
-    function breakAlert() {
+    function takeABreak() {
         alert('Take a break!');
     }
 });
