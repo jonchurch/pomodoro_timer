@@ -14,8 +14,8 @@ $(document).ready(function() {
             start.attr('disabled', true);
             var secondsVal = +seconds.text(); 
             var minutesVal = +minutes.text();
-            
-
+           
+ 
             if (secondsVal === 0 && minutesVal === 0) {
                 breakBtn.removeClass('disabled');
                 breakBtn.removeAttr('disabled');
